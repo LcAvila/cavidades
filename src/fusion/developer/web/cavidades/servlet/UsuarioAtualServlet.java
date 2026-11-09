@@ -17,7 +17,10 @@ public class UsuarioAtualServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        UsuarioAtual usuario = SessaoFusion.resolver(req);
+        UsuarioAtual usuario = (UsuarioAtual) req.getAttribute("usuarioAtual");
+        if (usuario == null) {
+            usuario = SessaoFusion.resolver(req);
+        }
 
         ObjectNode node = json.createObjectNode();
         node.put("autenticado", usuario != null);
