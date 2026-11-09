@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     id="svgDiagrama"
+     viewBox="0 0 857 1111">
+  <style>
+    :root {
+      --blue: #1976a8;
+      --yellow: #f2b01e;
+      --red: #d32f2f;
+    }
+    .moldura-rect {
+      fill: none;
+      stroke: #000;
+      stroke-width: 4;
+    }
+    .linha-conexao {
+      fill: none;
+      stroke: #777;
+      stroke-width: 2;
+    }
+    .interm-circle {
+      fill: #fff;
+      stroke: #777;
+      stroke-width: 2;
+    }
+    .hub-circle {
+      fill: #fff;
+      stroke: #000;
+      stroke-width: 2;
+    }
+    .hub-text, .cav-text {
+      fill: #000;
+      text-anchor: middle;
+      dominant-baseline: central;
+      pointer-events: none;
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+    }
+    .hub-text { font-size: 12px; }
+    .cav-text { font-size: 16px; }
+    .cav-circle {
+      cursor: pointer;
+      transition: filter .15s;
+    }
+    .cav-circle:hover { filter: brightness(.88); }
+    .cav-circle.cav-selecionada-svg {
+      filter: drop-shadow(0 0 6px var(--blue));
+      stroke: var(--blue);
+      stroke-width: 5;
+    }
+    .status-normal {
+      fill: #fff;
+      stroke: #000;
+      stroke-width: 2;
+    }
+    .status-defeito {
+      fill: var(--yellow);
+      stroke: #a66d00;
+      stroke-width: 2;
+    }
+    .status-vedado {
+      fill: var(--red);
+      stroke: #a92323;
+      stroke-width: 2;
+    }
+    .status-vedado-txt { fill: #fff !important; }
+  </style>
+
+  <defs>
+    <!-- Todos os conjuntos usam exatamente a mesma geometria. -->
+    <g id="estrutura-alinhada">
+      <path class="linha-conexao"
+            d="M 0,-88 V 88
+               M -88,0 H 88
+               M -40,-132 L 0,-88 L 40,-132
+               M -132,-40 L -88,0 L -132,40
+               M -40,132 L 0,88 L 40,132
+               M 132,-40 L 88,0 L 132,40"/>
+      <circle class="interm-circle" cx="0" cy="-88" r="6"/>
+      <circle class="interm-circle" cx="-88" cy="0" r="6"/>
+      <circle class="interm-circle" cx="0" cy="88" r="6"/>
+      <circle class="interm-circle" cx="88" cy="0" r="6"/>
+      <circle class="hub-circle" cx="0" cy="0" r="19"/>
+    </g>
+  </defs>
+
+  <rect class="moldura-rect" x="4" y="4" width="849" height="1103"/>
+
+  <!-- Conjunto 1: superior esquerdo -->
+  <g transform="translate(170 175)">
+    <use href="#estrutura-alinhada"/>
+    <text class="hub-text" x="0" y="0">1</text>
+
+    <circle class="cav-circle status-normal" data-cav="1" cx="-40" cy="-132" r="21"/>
+    <text class="cav-text" data-cav="1" x="-40" y="-132">1</text>
+    <circle class="cav-circle status-normal" data-cav="8" cx="40" cy="-132" r="21"/>
+    <text class="cav-text" data-cav="8" x="40" y="-132">8</text>
+
+    <circle class="cav-circle status-normal" data-cav="2" cx="-132" cy="-40" r="21"/>
+    <text class="cav-text" data-cav="2" x="-132" y="-40">2</text>
+    <circle class="cav-circle status-normal" data-cav="3" cx="-132" cy="40" r="21"/>
+    <text class="cav-text" data-cav="3" x="-132" y="40">3</text>
+
+    <circle class="cav-circle status-normal" data-cav="4" cx="-40" cy="132" r="21"/>
+    <text class="cav-text" data-cav="4" x="-40" y="132">4</text>
+    <circle class="cav-circle status-normal" data-cav="5" cx="40" cy="132" r="21"/>
+    <text class="cav-text" data-cav="5" x="40" y="132">5</text>
+
+    <circle class="cav-circle status-normal" data-cav="6" cx="132" cy="40" r="21"/>
+    <text class="cav-text" data-cav="6" x="132" y="40">6</text>
+    <circle class="cav-circle status-normal" data-cav="7" cx="132" cy="-40" r="21"/>
+    <text class="cav-text" data-cav="7" x="132" y="-40">7</text>
+  </g>
+
+  <!-- Conjunto 2: meio esquerdo -->
+  <g transform="translate(170 555.5)">
+    <use href="#estrutura-alinhada"/>
+    <text class="hub-text" x="0" y="0">2</text>
+
+    <circle class="cav-circle status-normal" data-cav="9" cx="-40" cy="-132" r="21"/>
+    <text class="cav-text" data-cav="9" x="-40" y="-132">9</text>
+    <circle class="cav-circle status-normal" data-cav="16" cx="40" cy="-132" r="21"/>
+    <text class="cav-text" data-cav="16" x="40" y="-132">16</text>
+
+    <circle class="cav-circle status-normal" data-cav="10" cx="-132" cy="-40" r="21"/>
+    <text class="cav-text" data-cav="10" x="-132" y="-40">10</text>
+    <circle class="cav-circle status-normal" data-cav="11" cx="-132" cy="40" r="21"/>
+    <text class="cav-text" data-cav="11" x="-132" y="40">11</text>
+
+    <circle class="cav-circle status-normal" data-cav="12" cx="-40" cy="132" r="21"/>
+    <text class="cav-text" data-cav="12" x="-40" y="132">12</text>
+    <circle class="cav-circle status-normal" data-cav="13" cx="40" cy="132" r="21"/>
+    <text class="cav-text" data-cav="13" x="40" y="132">13</text>
+
+    <circle class="cav-circle status-normal" data-cav="14" cx="132" cy="40" r="21"/>
+    <text class="cav-text" data-cav="14" x="132" y="40">14</text>
+    <circle class="cav-circle status-normal" data-cav="15" cx="132" cy="-40" r="21"/>
+    <text class="cav-text" data-cav="15" x="132" y="-40">15</text>
+  </g>
+
+  <!-- Conjunto 3: inferior esquerdo -->
+  <g transform="translate(170 936)">
+    <use href="#estrutura-alinhada"/>
+    <text class="hub-text" x="0" y="0">3</text>
+
+    <circle class="cav-circle status-normal" data-cav="17" cx="-40" cy="-132" r="21"/>
+    <text class="cav-text" data-cav="17" x="-40" y="-132">17</text>
+    <circle class="cav-circle status-normal" data-cav="24" cx="40" cy="-132" r="21"/>
+    <text class="cav-text" data-cav="24" x="40" y="-132">24</text>
+
+    <circle class="cav-circle status-normal" data-cav="18" cx="-132" cy="-40" r="21"/>
+    <text class="cav-text" data-cav="18" x="-132" y="-40">18</text>
+    <circle class="cav-circle status-normal" data-cav="19" cx="-132" cy="40" r="21"/>
+    <text class="cav-text" data-cav="19" x="-132" y="40">19</text>
+
+    <circle class="cav-circle status-normal" data-cav="20" cx="-40" cy="132" r="21"/>
+    <text class="cav-text" data-cav="20" x="-40" y="132">20</text>
+    <circle class="cav-circle status-normal" data-cav="21" cx="40" cy="132" r="21"/>
+    <text class="cav-text" data-cav="21" x="40" y="132">21</text>
+
+    <circle class="cav-circle status-normal" data-cav="22" cx="132" cy="40" r="21"/>
+    <text class="cav-text" data-cav="22" x="132" y="40">22</text>
+    <circle class="cav-circle status-normal" data-cav="23" cx="132" cy="-40" r="21"/>
+    <text class="cav-text" data-cav="23" x="132" y="-40">23</text>
+  </g>
+
+  <!-- Conjunto 4: superior direito -->
+  <g transform="translate(687 175)">
+    <use href="#estrutura-alinhada"/>
+    <text class="hub-text" x="0" y="0">4</text>
+
+    <circle class="cav-circle status-normal" data-cav="25" cx="-40" cy="-132" r="21"/>
+    <text class="cav-text" data-cav="25" x="-40" y="-132">25</text>
+    <circle class="cav-circle status-normal" data-cav="32" cx="40" cy="-132" r="21"/>
+    <text class="cav-text" data-cav="32" x="40" y="-132">32</text>
+
+    <circle class="cav-circle status-normal" data-cav="26" cx="-132" cy="-40" r="21"/>
+    <text class="cav-text" data-cav="26" x="-132" y="-40">26</text>
+    <circle class="cav-circle status-normal" data-cav="27" cx="-132" cy="40" r="21"/>
+    <text class="cav-text" data-cav="27" x="-132" y="40">27</text>
+
+    <circle class="cav-circle status-normal" data-cav="28" cx="-40" cy="132" r="21"/>
+    <text class="cav-text" data-cav="28" x="-40" y="132">28</text>
+    <circle class="cav-circle status-normal" data-cav="29" cx="40" cy="132" r="21"/>
+    <text class="cav-text" data-cav="29" x="40" y="132">29</text>
+
+    <circle class="cav-circle status-normal" data-cav="30" cx="132" cy="40" r="21"/>
+    <text class="cav-text" data-cav="30" x="132" y="40">30</text>
+    <circle class="cav-circle status-normal" data-cav="31" cx="132" cy="-40" r="21"/>
+    <text class="cav-text" data-cav="31" x="132" y="-40">31</text>
+  </g>
+
+  <!-- Conjunto 5: meio direito -->
+  <g transform="translate(687 555.5)">
+    <use href="#estrutura-alinhada"/>
+    <text class="hub-text" x="0" y="0">5</text>
+
+    <circle class="cav-circle status-normal" data-cav="33" cx="-40" cy="-132" r="21"/>
+    <text class="cav-text" data-cav="33" x="-40" y="-132">33</text>
+    <circle class="cav-circle status-normal" data-cav="40" cx="40" cy="-132" r="21"/>
+    <text class="cav-text" data-cav="40" x="40" y="-132">40</text>
+
+    <circle class="cav-circle status-normal" data-cav="34" cx="-132" cy="-40" r="21"/>
+    <text class="cav-text" data-cav="34" x="-132" y="-40">34</text>
+    <circle class="cav-circle status-normal" data-cav="35" cx="-132" cy="40" r="21"/>
+    <text class="cav-text" data-cav="35" x="-132" y="40">35</text>
+
+    <circle class="cav-circle status-normal" data-cav="36" cx="-40" cy="132" r="21"/>
+    <text class="cav-text" data-cav="36" x="-40" y="132">36</text>
+    <circle class="cav-circle status-normal" data-cav="37" cx="40" cy="132" r="21"/>
+    <text class="cav-text" data-cav="37" x="40" y="132">37</text>
+
+    <circle class="cav-circle status-normal" data-cav="38" cx="132" cy="40" r="21"/>
+    <text class="cav-text" data-cav="38" x="132" y="40">38</text>
+    <circle class="cav-circle status-normal" data-cav="39" cx="132" cy="-40" r="21"/>
+    <text class="cav-text" data-cav="39" x="132" y="-40">39</text>
+  </g>
+
+  <!-- Conjunto 6: inferior direito -->
+  <g transform="translate(687 936)">
+    <use href="#estrutura-alinhada"/>
+    <text class="hub-text" x="0" y="0">6</text>
+
+    <circle class="cav-circle status-normal" data-cav="41" cx="-40" cy="-132" r="21"/>
+    <text class="cav-text" data-cav="41" x="-40" y="-132">41</text>
+    <circle class="cav-circle status-normal" data-cav="48" cx="40" cy="-132" r="21"/>
+    <text class="cav-text" data-cav="48" x="40" y="-132">48</text>
+
+    <circle class="cav-circle status-normal" data-cav="42" cx="-132" cy="-40" r="21"/>
+    <text class="cav-text" data-cav="42" x="-132" y="-40">42</text>
+    <circle class="cav-circle status-normal" data-cav="43" cx="-132" cy="40" r="21"/>
+    <text class="cav-text" data-cav="43" x="-132" y="40">43</text>
+
+    <circle class="cav-circle status-normal" data-cav="44" cx="-40" cy="132" r="21"/>
+    <text class="cav-text" data-cav="44" x="-40" y="132">44</text>
+    <circle class="cav-circle status-normal" data-cav="45" cx="40" cy="132" r="21"/>
+    <text class="cav-text" data-cav="45" x="40" y="132">45</text>
+
+    <circle class="cav-circle status-normal" data-cav="46" cx="132" cy="40" r="21"/>
+    <text class="cav-text" data-cav="46" x="132" y="40">46</text>
+    <circle class="cav-circle status-normal" data-cav="47" cx="132" cy="-40" r="21"/>
+    <text class="cav-text" data-cav="47" x="132" y="-40">47</text>
+  </g>
+</svg>
